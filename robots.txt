@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amberlinks.github.io/baku-website/sitemap.xml
