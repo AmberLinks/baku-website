@@ -260,14 +260,14 @@ section.ink { background: var(--ink); color: var(--paper); }
 }
 .biz .num {
   position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -52%);
-  font-family: var(--serif-en);
-  font-weight: 300;
-  font-size: clamp(280px, 42vw, 640px);
-  letter-spacing: -.04em;
-  line-height: .8;
+  transform: translate(-50%, -50%);
+  font-family: var(--serif-jp);
+  font-weight: 200;
+  font-size: clamp(260px, 38vw, 560px);
+  letter-spacing: 0;
+  line-height: 1;
   color: currentColor;
-  opacity: .055;
+  opacity: .07;
   pointer-events: none;
   z-index: 0;
   white-space: nowrap;
