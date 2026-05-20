@@ -17,7 +17,7 @@ const orgJsonLd = {
   description="文化と事業を、つなぐ。合同会社 貘は、IPライセンス・広告代理・監修・イベント・Web/アプリ開発を横断し、想いの種を、事業として社会に届けます。"
   ogDescription="文化と事業を、つなぐ。"
 >
-  <script type="application/ld+json" slot="head" set:html={JSON.stringify(orgJsonLd)} />
+  <script is:inline type="application/ld+json" slot="head" set:html={JSON.stringify(orgJsonLd)} />
 
   <a class="skip-link" href="#about">本文へスキップ</a>
 
@@ -35,11 +35,6 @@ const orgJsonLd = {
 
   <!-- §1 Hero -->
   <section class="hero" aria-label="Hero">
-    <video
-      src="/assets/baku_video_final.mp4"
-      poster="/assets/logo_icon.jpg"
-      autoplay muted playsinline preload="metadata"
-      aria-hidden="true"></video>
     <div class="veil" aria-hidden="true"></div>
     <a class="scroll-cue" href="#about" aria-label="次のセクションへ進む">　 進 む 　</a>
   </section>
