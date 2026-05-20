@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://amberlinks.github.io/baku-website/sitemap.xml
+Sitemap: https://baku-llc.co.jp/sitemap.xml
