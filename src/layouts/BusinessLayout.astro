@@ -1,0 +1,143 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  index: '01' | '02' | '03' | '04' | '05';
+  kanji: string;
+  chapter: string;
+  enTitle: string;
+  jaTitle: string;
+  lead: string;
+  tone?: 'light' | 'ink';
+  title: string;
+  description: string;
+}
+
+const {
+  index,
+  kanji,
+  chapter,
+  enTitle,
+  jaTitle,
+  lead,
+  tone = 'light',
+  title,
+  description,
+} = Astro.props;
+
+const next = String(Math.min(5, Number(index) + 1)).padStart(2, '0');
+const prev = String(Math.max(1, Number(index) - 1)).padStart(2, '0');
+const hasNext = Number(index) < 5;
+const hasPrev = Number(index) > 1;
+---
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalPath={`/business/${index}/`}
+>
+  <a class="skip-link" href="#biz-detail">本文へスキップ</a>
+
+  <header class="topbar">
+    <a class="mark" href="/">BAKU&nbsp;&nbsp;LLC</a>
+    <nav aria-label="グローバルナビゲーション">
+      <a href="/#about">About</a>
+      <a href="/#mission">Mission</a>
+      <a href="/#business">Business</a>
+      <a href="/#company">Company</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sub-page hero banner -->
+    <section class={`biz-hero ${tone}`} aria-labelledby="biz-detail-heading">
+      <span class="anchor">§ Business / {index} ・ 05</span>
+      <span class="anchor right"><a class="back-link" href="/#business">← Back to Index</a></span>
+      <div class="frame">
+        <div class="num" aria-hidden="true">{kanji}</div>
+        <div class="content">
+          <div class="reveal index">— {chapter} —</div>
+          <h1 class="reveal d1 en-title" id="biz-detail-heading">{enTitle}</h1>
+          <h2 class="reveal d2 ja-title">{jaTitle}</h2>
+          <p class="reveal d3 lead">{lead}</p>
+        </div>
+      </div>
+    </section>
+
+    <div class={`band-divider band-divider--${tone === 'light' ? 'ink' : 'paper'}`} aria-hidden="true">
+      <span class="divider"><span>Detail</span></span>
+    </div>
+
+    <article id="biz-detail" class={`biz-detail ${tone === 'light' ? 'ink' : 'light'}`}>
+      <slot />
+    </article>
+
+    <div class="band-divider band-divider--paper" aria-hidden="true">
+      <span class="divider"><span>Index</span></span>
+    </div>
+
+    <nav class="biz-pager" aria-label="事業ページの遷移">
+      {hasPrev ? (
+        <a class="pager-link prev" href={`/business/${prev}/`}>
+          <span class="pager-cap">Prev</span>
+          <span class="pager-label">— {prev} —</span>
+        </a>
+      ) : <span class="pager-spacer" />}
+      <a class="pager-home" href="/#business">事業一覧へ戻る</a>
+      {hasNext ? (
+        <a class="pager-link next" href={`/business/${next}/`}>
+          <span class="pager-cap">Next</span>
+          <span class="pager-label">— {next} —</span>
+        </a>
+      ) : <span class="pager-spacer" />}
+    </nav>
+  </main>
+
+  <footer>
+    <div class="row">
+      <div class="brand">
+        貘
+        <small>BAKU &nbsp; LLC</small>
+      </div>
+      <div class="col">
+        <h6>Sitemap</h6>
+        <a href="/#about">About</a>
+        <a href="/#mission">Mission</a>
+        <a href="/#business">Business</a>
+        <a href="/#company">Company</a>
+      </div>
+      <div class="col">
+        <h6>Contact</h6>
+        <a href="mailto:baku@baku-llc.co.jp">baku@baku-llc.co.jp</a>
+        <p class="muted">For partnership / press inquiries.</p>
+      </div>
+      <div class="col">
+        <h6>Follow</h6>
+        <a href="#" aria-disabled="true" tabindex="-1">X &nbsp;— coming soon</a>
+        <a href="#" aria-disabled="true" tabindex="-1">Instagram &nbsp;— coming soon</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 Baku LLC.&nbsp;&nbsp;All rights reserved.</span>
+      <span>合 同 会 社 　 貘</span>
+    </div>
+  </footer>
+
+  <script is:inline>
+  (function () {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
+        var e = entries[i];
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      }
+    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  })();
+  </script>
+</BaseLayout>

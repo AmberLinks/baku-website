@@ -8,7 +8,7 @@ const orgJsonLd = {
   alternateName: 'Baku LLC',
   url: 'https://baku-llc.co.jp/',
   logo: 'https://baku-llc.co.jp/assets/logo_icon.jpg',
-  foundingDate: '2025',
+  foundingDate: '2026',
   email: 'baku@baku-llc.co.jp',
 };
 ---
@@ -36,11 +36,10 @@ const orgJsonLd = {
   <!-- §1 Hero -->
   <section class="hero" aria-label="Hero">
     <video
+      id="hero-video"
       src="/assets/baku_video_final.mp4"
-      poster="/assets/logo_icon.jpg"
-      autoplay muted playsinline preload="metadata"
-      aria-hidden="true"
-      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92"></video>
+      autoplay muted playsinline preload="auto"
+      aria-hidden="true"></video>
     <div class="veil" aria-hidden="true"></div>
     <a class="scroll-cue" href="#about" aria-label="次のセクションへ進む">　 進 む 　</a>
   </section>
@@ -83,20 +82,22 @@ const orgJsonLd = {
   <section id="business" class="biz light" aria-labelledby="biz1-heading">
     <span class="anchor">§ 04 — Business</span>
     <span class="anchor right">01 / 05</span>
-    <div class="frame">
-      <div class="num" aria-hidden="true">壱</div>
-      <div class="content">
-        <div class="reveal index">— Chapter One —</div>
-        <h2 class="reveal d1 en-title" id="biz1-heading">IP License</h2>
-        <h3 class="reveal d2 ja-title">I P ライセンス</h3>
-        <p class="reveal d3 lead">
-          <span class="nowrap">キャラクター・ブランドの</span><span class="nowrap">IPを管理し、</span><span class="nowrap">企業との共創を</span><span class="nowrap">設計します。</span>
-        </p>
-        <p class="reveal d4 note">
-          <span class="nowrap">商標・著作権の管理、</span><span class="nowrap">サブライセンス供与を通じた、</span><span class="nowrap">IPの活用設計。</span>
-        </p>
+    <a class="biz-link" href="/business/01/" aria-label="IPライセンス事業の詳細ページへ">
+      <div class="frame">
+        <div class="num" aria-hidden="true">壱</div>
+        <div class="content">
+          <div class="reveal index">— Chapter One —</div>
+          <h2 class="reveal d1 en-title" id="biz1-heading">IP License</h2>
+          <h3 class="reveal d2 ja-title">I P ライセンス</h3>
+          <p class="reveal d3 lead">
+            <span class="nowrap">キャラクター・ブランドの</span><span class="nowrap">IPを管理し、</span><span class="nowrap">企業との共創を</span><span class="nowrap">設計します。</span>
+          </p>
+          <p class="reveal d4 note">
+            <span class="nowrap">商標・著作権の管理、</span><span class="nowrap">サブライセンス供与を通じた、</span><span class="nowrap">IPの活用設計。</span>
+          </p>
+        </div>
       </div>
-    </div>
+    </a>
   </section>
 
   <div class="band-divider band-divider--ink" aria-hidden="true">
@@ -107,20 +108,22 @@ const orgJsonLd = {
   <section class="biz ink" aria-labelledby="biz2-heading">
     <span class="anchor">§ 05 — Business</span>
     <span class="anchor right">02 / 05</span>
-    <div class="frame">
-      <div class="num" aria-hidden="true">弐</div>
-      <div class="content">
-        <div class="reveal index">— Chapter Two —</div>
-        <h2 class="reveal d1 en-title" id="biz2-heading">Advertising &amp; Distribution</h2>
-        <h3 class="reveal d2 ja-title">戦略的広告代理・卸仲介</h3>
-        <p class="reveal d3 lead">
-          <span class="nowrap">コンテンツ力で</span><span class="nowrap">「売れる仕組み」を</span><span class="nowrap">設計し、</span><span class="nowrap">動物関連市場に届けます。</span>
-        </p>
-        <p class="reveal d4 note">
-          <span class="nowrap">SNS・専門家コミュニティを</span><span class="nowrap">活用した、</span><span class="nowrap">コンテンツ起点の流通設計。</span>
-        </p>
+    <a class="biz-link" href="/business/02/" aria-label="戦略的広告代理・卸仲介事業の詳細ページへ">
+      <div class="frame">
+        <div class="num" aria-hidden="true">弐</div>
+        <div class="content">
+          <div class="reveal index">— Chapter Two —</div>
+          <h2 class="reveal d1 en-title" id="biz2-heading">Advertising &amp; Distribution</h2>
+          <h3 class="reveal d2 ja-title">戦略的広告代理・卸仲介</h3>
+          <p class="reveal d3 lead">
+            <span class="nowrap">コンテンツ力で</span><span class="nowrap">「売れる仕組み」を</span><span class="nowrap">設計し、</span><span class="nowrap">動物関連市場に届けます。</span>
+          </p>
+          <p class="reveal d4 note">
+            <span class="nowrap">SNS・専門家コミュニティを</span><span class="nowrap">活用した、</span><span class="nowrap">コンテンツ起点の流通設計。</span>
+          </p>
+        </div>
       </div>
-    </div>
+    </a>
   </section>
 
   <div class="band-divider band-divider--paper" aria-hidden="true">
@@ -131,20 +134,22 @@ const orgJsonLd = {
   <section class="biz light" aria-labelledby="biz3-heading">
     <span class="anchor">§ 06 — Business</span>
     <span class="anchor right">03 / 05</span>
-    <div class="frame">
-      <div class="num" aria-hidden="true">参</div>
-      <div class="content">
-        <div class="reveal index">— Chapter Three —</div>
-        <h2 class="reveal d1 en-title" id="biz3-heading">Supervision &amp; Consulting</h2>
-        <h3 class="reveal d2 ja-title">監修・コンサルティング仲介</h3>
-        <p class="reveal d3 lead">
-          <span class="nowrap">獣医師・専門家の知見を、</span><span class="nowrap">企業の商品開発へと</span><span class="nowrap">橋渡しします。</span>
-        </p>
-        <p class="reveal d4 note">
-          <span class="nowrap">動物・環境配慮型商品の</span><span class="nowrap">専門監修、</span><span class="nowrap">知見ネットワークの仲介。</span>
-        </p>
+    <a class="biz-link" href="/business/03/" aria-label="監修・コンサルティング仲介事業の詳細ページへ">
+      <div class="frame">
+        <div class="num" aria-hidden="true">参</div>
+        <div class="content">
+          <div class="reveal index">— Chapter Three —</div>
+          <h2 class="reveal d1 en-title" id="biz3-heading">Supervision &amp; Consulting</h2>
+          <h3 class="reveal d2 ja-title">監修・コンサルティング仲介</h3>
+          <p class="reveal d3 lead">
+            <span class="nowrap">獣医師・専門家の知見を、</span><span class="nowrap">企業の商品開発へと</span><span class="nowrap">橋渡しします。</span>
+          </p>
+          <p class="reveal d4 note">
+            <span class="nowrap">動物・環境配慮型商品の</span><span class="nowrap">専門監修、</span><span class="nowrap">知見ネットワークの仲介。</span>
+          </p>
+        </div>
       </div>
-    </div>
+    </a>
   </section>
 
   <div class="band-divider band-divider--ink" aria-hidden="true">
@@ -155,20 +160,22 @@ const orgJsonLd = {
   <section class="biz ink" aria-labelledby="biz4-heading">
     <span class="anchor">§ 07 — Business</span>
     <span class="anchor right">04 / 05</span>
-    <div class="frame">
-      <div class="num" aria-hidden="true">肆</div>
-      <div class="content">
-        <div class="reveal index">— Chapter Four —</div>
-        <h2 class="reveal d1 en-title" id="biz4-heading">Community Events</h2>
-        <h3 class="reveal d2 ja-title">イベント事業</h3>
-        <p class="reveal d3 lead">
-          <span class="nowrap">命と人が出会う場を、</span><span class="nowrap">地域の真ん中に作ります。</span>
-        </p>
-        <p class="reveal d4 note">
-          <span class="nowrap">お寺を拠点とした、</span><span class="nowrap">譲渡会・講演会・</span><span class="nowrap">文化交流イベントの企画運営。</span>
-        </p>
+    <a class="biz-link" href="/business/04/" aria-label="イベント事業の詳細ページへ">
+      <div class="frame">
+        <div class="num" aria-hidden="true">肆</div>
+        <div class="content">
+          <div class="reveal index">— Chapter Four —</div>
+          <h2 class="reveal d1 en-title" id="biz4-heading">Community Events</h2>
+          <h3 class="reveal d2 ja-title">イベント事業</h3>
+          <p class="reveal d3 lead">
+            <span class="nowrap">命と人が出会う場を、</span><span class="nowrap">地域の真ん中に作ります。</span>
+          </p>
+          <p class="reveal d4 note">
+            <span class="nowrap">お寺を拠点とした、</span><span class="nowrap">譲渡会・講演会・</span><span class="nowrap">文化交流イベントの企画運営。</span>
+          </p>
+        </div>
       </div>
-    </div>
+    </a>
   </section>
 
   <div class="band-divider band-divider--ink" aria-hidden="true">
@@ -179,20 +186,22 @@ const orgJsonLd = {
   <section class="biz light" aria-labelledby="biz5-heading">
     <span class="anchor">§ 08 — Business</span>
     <span class="anchor right">05 / 05</span>
-    <div class="frame">
-      <div class="num" aria-hidden="true">伍</div>
-      <div class="content">
-        <div class="reveal index">— Chapter Five —</div>
-        <h2 class="reveal d1 en-title" id="biz5-heading">Web &amp; App Development</h2>
-        <h3 class="reveal d2 ja-title">Web・アプリ開発</h3>
-        <p class="reveal d3 lead">
-          <span class="nowrap">Webとアプリで、</span><span class="nowrap">事業のデジタル化を支えます。</span>
-        </p>
-        <p class="reveal d4 note">
-          <span class="nowrap">他社・他団体の</span><span class="nowrap">HP・LP制作、</span><span class="nowrap">AI導入支援、</span><span class="nowrap">アプリケーション開発。</span>
-        </p>
+    <a class="biz-link" href="/business/05/" aria-label="Web・アプリ開発事業の詳細ページへ">
+      <div class="frame">
+        <div class="num" aria-hidden="true">伍</div>
+        <div class="content">
+          <div class="reveal index">— Chapter Five —</div>
+          <h2 class="reveal d1 en-title" id="biz5-heading">Web &amp; App Development</h2>
+          <h3 class="reveal d2 ja-title">Web・アプリ開発</h3>
+          <p class="reveal d3 lead">
+            <span class="nowrap">Webとアプリで、</span><span class="nowrap">事業のデジタル化を支えます。</span>
+          </p>
+          <p class="reveal d4 note">
+            <span class="nowrap">他社・他団体の</span><span class="nowrap">HP・LP制作、</span><span class="nowrap">AI導入支援、</span><span class="nowrap">アプリケーション開発。</span>
+          </p>
+        </div>
       </div>
-    </div>
+    </a>
   </section>
 
   <div class="band-divider band-divider--paper" aria-hidden="true">
@@ -209,8 +218,8 @@ const orgJsonLd = {
 
     <dl class="grid reveal d2">
       <dt>Name</dt>           <dd>合同会社 貘 ／ Baku LLC</dd>
-      <dt>Established</dt>    <dd>2025年</dd>
-      <dt>Representative</dt> <dd>代表社員　— —</dd>
+      <dt>Established</dt>    <dd>2026年</dd>
+      <dt>Representative</dt> <dd>代表社員　坂本 和哉</dd>
       <dt>Address</dt>        <dd>日本国内（詳細はお問い合わせください）</dd>
       <dt>Business</dt>       <dd>IPライセンス／広告代理・卸仲介／監修・コンサルティング／イベント事業／Web・アプリケーション開発</dd>
       <dt>Contact</dt>        <dd><a class="contact-link" href="mailto:baku@baku-llc.co.jp">baku@baku-llc.co.jp</a></dd>
@@ -266,6 +275,21 @@ const orgJsonLd = {
       }
     }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
     document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  })();
+  </script>
+
+  <script is:inline>
+  /* Hero video: fade in only after the first frame is decoded, so the dark ink
+     background is shown during load instead of a stretched poster image. */
+  (function () {
+    var v = document.getElementById('hero-video');
+    if (!v) return;
+    var ready = function () { v.classList.add('is-ready'); };
+    if (v.readyState >= 2) { ready(); }
+    else {
+      v.addEventListener('loadeddata', ready, { once: true });
+      v.addEventListener('canplay', ready, { once: true });
+    }
   })();
   </script>
 </BaseLayout>
