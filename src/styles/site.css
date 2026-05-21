@@ -920,6 +920,181 @@ footer .copy {
   width: 100%;
 }
 
+/* --- Roster (IP / product / event accordion list) --- */
+.biz-detail .roster {
+  display: flex; flex-direction: column;
+  gap: 16px;
+  max-width: 760px;
+  width: 100%;
+  margin-inline: auto;
+}
+.biz-detail .roster-item {
+  border: 1px solid var(--rule);
+  background: transparent;
+  transition: border-color .35s ease;
+}
+.biz-detail .roster-item[open] { border-color: var(--brass); }
+.biz-detail .roster-item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 22px 28px;
+  text-align: left;
+  transition: background .3s ease;
+}
+.biz-detail .roster-item summary::-webkit-details-marker { display: none; }
+.biz-detail .roster-item summary:hover { background: rgba(201,168,106,.06); }
+.biz-detail .roster-mark {
+  flex: 0 0 auto;
+  width: 56px; height: 56px;
+  border: 1px solid var(--brass);
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--brass);
+}
+.biz-detail .roster-meta {
+  flex: 1 1 auto;
+  display: flex; flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.biz-detail .roster-label {
+  font-family: var(--serif-en); font-style: italic;
+  font-size: 11px; letter-spacing: .35em; color: var(--brass);
+  text-transform: uppercase;
+}
+.biz-detail .roster-name {
+  font-family: var(--serif-jp);
+  font-weight: 400;
+  font-size: clamp(17px, 1.8vw, 21px);
+  letter-spacing: .14em;
+  line-height: 1.55;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.biz-detail .roster-name small {
+  font-family: var(--serif-en); font-style: italic;
+  font-size: 13px; letter-spacing: .15em;
+  color: var(--brass);
+  margin-left: 10px;
+  font-weight: 400;
+}
+.biz-detail .roster-status {
+  font-family: var(--serif-jp);
+  font-size: 12px;
+  letter-spacing: .18em;
+  opacity: .65;
+}
+.biz-detail .roster-status.status-past { opacity: .55; }
+.biz-detail .roster-status.status-now  { color: var(--brass); opacity: .9; }
+.biz-detail .roster-status.status-soon { color: var(--brass); opacity: .9; }
+.biz-detail .roster-toggle {
+  flex: 0 0 auto;
+  font-family: var(--serif-en);
+  font-size: 22px;
+  color: var(--brass);
+  width: 22px; text-align: center;
+  transition: transform .35s ease;
+}
+.biz-detail .roster-item[open] .roster-toggle { transform: rotate(45deg); }
+.biz-detail .roster-detail {
+  padding: 12px clamp(20px, 4vw, 36px) clamp(28px, 4vw, 40px);
+  border-top: 1px solid var(--rule);
+  display: flex; flex-direction: column;
+  gap: 28px;
+  align-items: center;
+}
+.biz-detail .roster-detail p { margin-inline: auto; }
+.biz-detail .roster-detail .kv {
+  margin-inline: auto;
+}
+@media (max-width: 640px) {
+  .biz-detail .roster-item summary {
+    padding: 18px 18px; gap: 14px;
+  }
+  .biz-detail .roster-mark { width: 44px; height: 44px; font-size: 18px; }
+  .biz-detail .roster-name { font-size: clamp(15px, 4.2vw, 18px); letter-spacing: .08em; }
+  .biz-detail .roster-name small { display: block; margin: 4px 0 0; }
+  .biz-detail .roster-label { font-size: 10px; letter-spacing: .28em; }
+  .biz-detail .roster-status { font-size: 11px; letter-spacing: .12em; }
+  .biz-detail .roster-toggle { font-size: 18px; }
+}
+
+/* --- Coming Soon panel --- */
+.biz-detail .coming-soon {
+  border: 1px dashed var(--brass);
+  padding: clamp(40px, 7vw, 72px) clamp(24px, 4vw, 48px);
+  max-width: 720px;
+  margin-inline: auto;
+  width: 100%;
+  display: flex; flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.biz-detail .coming-soon h4 {
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(24px, 3vw, 34px);
+  letter-spacing: .35em;
+  color: var(--brass);
+  text-transform: uppercase;
+}
+.biz-detail .coming-soon p { margin: 0 auto; }
+
+/* --- Floating CTA (event inquiry) --- */
+.floating-cta {
+  position: fixed;
+  right: clamp(16px, 3vw, 32px);
+  bottom: clamp(16px, 3vw, 32px);
+  z-index: 45;
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--brass);
+  padding: 14px 22px;
+  text-decoration: none;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  font-family: var(--serif-jp);
+  letter-spacing: .15em;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .35);
+  transition: background .3s, color .3s, transform .3s;
+}
+.floating-cta:hover,
+.floating-cta:focus-visible {
+  background: var(--brass);
+  color: var(--ink);
+  transform: translateY(-2px);
+  outline: none;
+}
+.floating-cta .cta-eyebrow {
+  font-family: var(--serif-en); font-style: italic;
+  font-size: 10px; letter-spacing: .4em; color: var(--brass);
+  text-transform: uppercase;
+  transition: color .3s;
+}
+.floating-cta:hover .cta-eyebrow,
+.floating-cta:focus-visible .cta-eyebrow { color: var(--ink); }
+.floating-cta .cta-label {
+  font-size: 14px;
+  letter-spacing: .22em;
+}
+@media (max-width: 640px) {
+  .floating-cta {
+    padding: 10px 16px;
+    right: 12px; bottom: 12px;
+  }
+  .floating-cta .cta-eyebrow { font-size: 9px; letter-spacing: .3em; }
+  .floating-cta .cta-label { font-size: 12px; letter-spacing: .18em; }
+}
+
 /* --- Sub-page responsive (tablet) --- */
 @media (max-width: 900px) {
   .biz-detail .twocol { grid-template-columns: 1fr; gap: 40px; }
